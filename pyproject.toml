@@ -13,8 +13,9 @@ dependencies = [
     "requests",
     'importlib-metadata; python_version<"3.10"'
 ]
-
-
+[project.urls]
+Homepage = "https://github.com/softwareHe/Lstspline"
+Issues = "https://github.com/softwareHe/Lstspline/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
