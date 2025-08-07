@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools >= 77.0.3", "cffi"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lstspline"
+version = "0.0.1"
+license = { text = "MIT" }
+license-files = ["LICENSE"]
+
+dependencies = [
+    "cffi",
+    "requests",
+    'importlib-metadata; python_version<"3.10"'
+]
+
+
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["lstspline"]
