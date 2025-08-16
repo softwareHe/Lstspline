@@ -1,22 +1,40 @@
 [build-system]
-requires = ["setuptools >= 77.0.3", "cffi"]
+requires = ["setuptools >= 61", "cffi >= 1.15.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "lstspline"
 version = "0.0.1"
-license = { text = "MIT" }
-license-files = ["LICENSE"]
-
+description = "A Python interface for spline-based computations using C++ with CFFI"
+readme = "README.md"
+license = "MIT"
 dependencies = [
-    "cffi",
+    "numpy >= 1.21.0",
+    "cffi >= 1.15.1",
     "requests",
-    'importlib-metadata; python_version<"3.10"'
+    'importlib-metadata; python_version < "3.10"'
 ]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
 [project.urls]
 Homepage = "https://github.com/softwareHe/Lstspline"
 Issues = "https://github.com/softwareHe/Lstspline/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-packages = ["lstspline"]
+packages = { find = { where = ["src"] } }
+
+
+[tool.setuptools.package-data]
+lstspline = ["*.h", "*.hpp", "*.c", "*.cpp", "*.so", "*.dll", "*.dylib"]
